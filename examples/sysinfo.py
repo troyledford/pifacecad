@@ -70,6 +70,8 @@ if __name__ == "__main__":
         cad.lcd.store_custom_bitmap(temp_symbol_index, temperature_symbol)
         cad.lcd.store_custom_bitmap(memory_symbol_index, memory_symbol)
         cad.lcd.backlight_on()
+        cad.lcd.write("Now attacking network...standy")
+        sleep(3)
         cad.lcd.write("Waiting for IP..")
         wait_for_ip()
         show_sysinfo()
