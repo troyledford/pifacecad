@@ -5,7 +5,7 @@ from time import sleep
 import pifacecad
 
 
-UPDATE_INTERVAL = 60 * 5  # 5 mins
+UPDATE_INTERVAL = 10 * 5  # 5 mins
 GET_IP_CMD = "hostname --all-ip-addresses"
 GET_TEMP_CMD = "/opt/vc/bin/vcgencmd measure_temp"
 TOTAL_MEM_CMD = "free | grep 'Mem' | awk '{print $2}'"
@@ -43,7 +43,8 @@ def wait_for_ip():
         sleep(1)
         ip = get_my_ip()
 
-
+cad.lcd.write("3.141592") # writes π to the LCD
+    sleep(3)
 def show_sysinfo():
     while True:
         cad.lcd.clear()
